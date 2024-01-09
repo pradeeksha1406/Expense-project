@@ -8,7 +8,7 @@ echo removing default  fronend code
 rm -rf /usr/share/nginx/html/* >> /tmp/expense.log
 
 echo download frontend code
-curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip >> /tmp/expense.log
+curl -f -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip >> /tmp/expense.log
 
 # shellcheck disable=SC2164
 cd /usr/share/nginx/html >> /tmp/expense.log
