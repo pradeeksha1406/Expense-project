@@ -25,4 +25,4 @@ systemctl start backend
 
 dnf install mysql -y
 
-mysql -h 172.31.85.195 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.techadda.co -uroot -pExpenseApp@1 < /app/schema/backend.sql
