@@ -1,4 +1,4 @@
-Echo insatlling nginx
+echo insatlling nginx
 dnf install nginx -y > /tmp/expense.log
 
 echo copy the expence file
