@@ -1,4 +1,4 @@
-load common.sh
+source common.sh
 echo insatlling nginx
 dnf install nginx -y >> $log_file
 
