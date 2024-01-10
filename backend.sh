@@ -18,13 +18,10 @@ useradd expense >> $log_file
 echo making diretory
 mkdir /app >> $log_file
 
-echo downloading the bakend code
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >> $log_file
-
+echo moving to app directory
 cd /app >> $log_file
 
-echo extracting the backed code zip
-unzip /tmp/backend.zip >> $log_file
+download_and_extract1
 
 echo relove code dependecieys
 npm install >> $log_file
