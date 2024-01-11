@@ -62,5 +62,5 @@ status_check
 
 echo load the schema
 sql_rootpassword=$1
-mysql -h mysql.techadda.co -uroot -p$1 < /app/schema/backend.sql
+mysql -h mysql.techadda.co -uroot -psql_rootpassword < /app/schema/backend.sql
 status_check
