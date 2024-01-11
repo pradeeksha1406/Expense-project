@@ -8,16 +8,17 @@ status_check
 echo enable nodejs
 dnf module enable nodejs:18 -y &>>$log_file
 status_check
-
+if [ $? -ne 0 ]; then
 echo installing nodejs
 dnf install nodejs -y
 status_check
+fi
 
 echo copy bakend service
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 status_check
 
-ehco add application user
+echo add application user
 id expense &>>$log_file
 if [ $? -ne 0 ]; then
 useradd expense &>>$log_file
