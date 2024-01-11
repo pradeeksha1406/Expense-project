@@ -3,8 +3,6 @@ component=frontend
 
 echo insatlling nginx
 dnf install nginx -y &>>$log_file
-# shellcheck disable=SC1073
-if [ $? -eq 0 ]; then
   if [ $? -eq 0 ]; then
     echo -e "\e[31mSuccess\e[0m"
     else
