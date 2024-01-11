@@ -17,7 +17,7 @@ echo copy bakend service
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 status_check
 
-ehco useradd
+ehco add application user
 id expense &>>$log_file
 if [ $? -ne 0 ]; then
 useradd expense &>>$log_file
