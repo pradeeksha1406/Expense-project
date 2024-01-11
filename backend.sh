@@ -3,42 +3,55 @@ source common.sh
 
 echo disable existing nodejs
 dnf module disable nodejs -y &>>$log_file
+echo $?
 
 echo enable nodejs
 dnf module enable nodejs:18 -y &>>$log_file
+echo $?
 
 echo installing nodejs
 dnf install nodejs -y
+echo $?
 
 echo copy bakend service
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
+echo $?
 
 ehco useradd
 useradd expense &>>$log_file
+echo $?
 
 echo making diretory
 mkdir /app &>>$log_file
+echo $?
 
 echo moving to app directory
 cd /app &>>$log_file
+echo $?
 
 download_and_extract1
 
 echo relove code dependecieys
 npm install &>>$log_file
+echo $?
 
 
 echo system reload after edit in backen config file
 systemctl daemon-reload &>>$log_file
+echo $?
 
 echo backend
 systemctl enable backend &>>$log_file
+echo $?
 
 echo bakend start
 systemctl start backend &>>$log_file
+echo $?
 
 echo installing mysql client
 dnf install mysql -y &>>$log_file
+echo $?
 
 echo load the schema
 mysql -h mysql.techadda.co -uroot -pExpenseApp@1 < /app/schema/backend.sql
+echo $?
