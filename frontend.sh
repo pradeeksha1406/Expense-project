@@ -3,7 +3,7 @@ component=frontend
 
 echo insatlling nginx
 dnf install nginx -y &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
@@ -11,7 +11,7 @@ if [$? -eq 0];then
 
 echo copy the expence file
 cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
@@ -19,7 +19,7 @@ if [$? -eq 0];then
 
 echo removing default  fronend code
 rm -rf /usr/share/nginx/html/* &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
@@ -34,7 +34,7 @@ download_and_extract
 
 echo enable nginx
 systemctl enable nginx &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
@@ -42,7 +42,7 @@ if [$? -eq 0];then
 
 echo start nginx
 systemctl start nginx &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
@@ -50,7 +50,7 @@ if [$? -eq 0];then
 
 echo restart nginx
 systemctl restart nginx &>>$log_file
-if [$? -eq 0];then
+if [ $? -eq 0]; then
   echo success
   else
     echo failed
