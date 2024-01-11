@@ -54,7 +54,7 @@ if [ $? -eq 0 ]; then
     fi 
 
 echo restart nginx
-systemctl  nginx &>>$log_file
+systemctl restart nginx &>>$log_file
 if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
