@@ -37,7 +37,7 @@ cd /app &>>$log_file
 status_check
 
 download_and_extract1
-status_check
+
 
 echo relove code dependecieys
 npm install &>>$log_file

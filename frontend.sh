@@ -17,7 +17,7 @@ status_check
 cd /usr/share/nginx/html &>>$log_file
 
 download_and_extract
-status_check
+
 
 
 echo enable nginx
