@@ -25,7 +25,10 @@ fi
 status_check
 
 echo making diretory
+if [ $? -ne 0 ]; then
 mkdir /app &>>$log_file
+fi
+
 status_check
 
 echo moving to app directory
