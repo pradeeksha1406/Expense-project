@@ -7,6 +7,7 @@ dnf install nginx -y &>>$log_file
     echo -e "\e[31mSuccess\e[0m"
     else
     echo -e "\e[31mFailed\e[0m"
+    exit
       fi
 
 echo copy the expence file
@@ -15,6 +16,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
   echo -e "\e[31mFailed\e[0m"
+  exit
     fi 
 
 echo removing default  fronend code
@@ -23,6 +25,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
   echo -e "\e[31mFailed\e[0m"
+  exit
     fi 
 
 # shellcheck disable=SC2164
@@ -38,6 +41,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
   echo -e "\e[31mFailed\e[0m"
+  exit
     fi 
 
 echo start nginx
@@ -46,12 +50,14 @@ if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
   echo -e "\e[31mFailed\e[0m"
+  exit
     fi 
 
 echo restart nginx
-systemctl restart nginx &>>$log_file
+systemctl  nginx &>>$log_file
 if [ $? -eq 0 ]; then
   echo -e "\e[31mSuccess\e[0m"
   else
   echo -e "\e[31mFailed\e[0m"
+  exit
     fi 
