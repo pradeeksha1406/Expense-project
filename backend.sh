@@ -18,7 +18,10 @@ cp backend.service /etc/systemd/system/backend.service &>>$log_file
 status_check
 
 ehco useradd
+id expense &>>$log_file
+if [ $? -ne 0 ]; then
 useradd expense &>>$log_file
+fi
 status_check
 
 echo making diretory
