@@ -6,7 +6,7 @@ dnf install nginx -y &>>$log_file
 status_check
 
 echo copy the expence file
-cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
+cp expse.conf /etc/nginx/default.d/expense.conf &>>$log_file
 status_check
 
 echo removing default  fronend code
