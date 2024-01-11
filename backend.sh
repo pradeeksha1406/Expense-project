@@ -61,5 +61,6 @@ dnf install mysql -y &>>$log_file
 status_check
 
 echo load the schema
-mysql -h mysql.techadda.co -uroot -pExpenseApp@1 < /app/schema/backend.sql
+sql_rootpassword=$1
+mysql -h mysql.techadda.co -uroot -p$1 < /app/schema/backend.sql
 status_check

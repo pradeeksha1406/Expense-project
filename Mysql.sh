@@ -21,5 +21,6 @@ systemctl start mysqld &>>$log_file
 status_check
 
 echo set root pass
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$log_file
+sql_rootpassword=$1
+mysql_secure_installation --set-root-pass $1 &>>$log_file
 status_check
