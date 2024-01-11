@@ -13,10 +13,14 @@ echo $?
 }
 download_and_extract1()
 {
+if [ $? -ne 0 ]; then
 echo downloading the backend code
 curl -s -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >> $log_file
+fi
+if [ $? -ne 0 ]; then
 echo extracting the backed code zip
 unzip /tmp/backend.zip >> $log_file
+fi
 }
 status_check(){
   if [ $? -eq 0 ]; then
