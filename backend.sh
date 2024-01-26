@@ -25,6 +25,11 @@ useradd expense &>>$log_file
 fi
 status_check
 
+echo  clean app content
+rm -rf &>>log_file
+status_check
+
+
 echo making diretory
 if [ $? -ne 0 ]; then
 mkdir /app &>>$log_file
