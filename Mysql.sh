@@ -22,5 +22,5 @@ status_check
 
 echo set root pass
 sql_rootpassword=$1
-mysql_secure_installation --set-root-pass $sql_rootpassword &>>$log_file
+mysql_secure_installation --set-root-pass $ExpenseApp@1 &>>$log_file
 status_check
