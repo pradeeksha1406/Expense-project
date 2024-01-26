@@ -32,9 +32,9 @@ status_check
 
 
 echo making diretory
-if [ $? -ne 0 ]; then
+#if [ $? -ne 0 ]; then
 mkdir /app &>>$log_file
-fi
+#fi
 
 status_check
 
