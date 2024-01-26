@@ -45,7 +45,7 @@ status_check
 download_and_extract1
 
 
-echo relove code dependecieys
+echo resolve code dependecieys
 npm install &>>$log_file
 status_check
 
