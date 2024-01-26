@@ -1,6 +1,6 @@
 source common.sh
 
-
+type npm &>>log_file
 echo disable existing nodejs
 dnf module disable nodejs -y &>>$log_file
 status_check
