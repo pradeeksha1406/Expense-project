@@ -9,7 +9,7 @@ echo enable nodejs
 dnf module enable nodejs:18 -y &>>$log_file
 status_check
 
-type npm &>>log_file
+
 if [ $? -ne 0 ]; then
 echo installing nodejs
 dnf install nodejs -y
@@ -46,9 +46,9 @@ status_check
 download_and_extract1
 
 
-echo resolve code dependecieys
-npm install &>>$log_file
-status_check
+#echo resolve code dependecieys
+#npm install &>>$log_file
+#status_check
 
 
 echo system reload after edit in backen config file
