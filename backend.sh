@@ -8,6 +8,7 @@ status_check
 echo enable nodejs
 dnf module enable nodejs:18 -y &>>$log_file
 status_check
+
 if [ $? -ne 0 ]; then
 echo installing nodejs
 dnf install nodejs -y
