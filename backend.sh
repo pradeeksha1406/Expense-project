@@ -27,7 +27,7 @@ fi
 status_check
 
 echo  clean app content
-rm -rf &>>log_file
+rm -rf /app &>>log_file
 status_check
 
 
