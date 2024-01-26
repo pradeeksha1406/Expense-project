@@ -1,6 +1,6 @@
 source common.sh
 
-type npm &>>log_file
+
 echo disable existing nodejs
 dnf module disable nodejs -y &>>$log_file
 status_check
@@ -9,6 +9,7 @@ echo enable nodejs
 dnf module enable nodejs:18 -y &>>$log_file
 status_check
 
+type npm &>>log_file
 if [ $? -ne 0 ]; then
 echo installing nodejs
 dnf install nodejs -y
