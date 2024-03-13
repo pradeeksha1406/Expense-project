@@ -1,3 +1,4 @@
+cd
 source common.sh
 component=frontend
 
